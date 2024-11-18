@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>Gestione Logistica e Supply Chain</h1>
+  
+    <!-- Gestione Inventari e Riordino Automatico -->
+    <div class="section">
+      <h3>Gestione Inventari e Riordino</h3>
+      <button (click)="reorderStock()">Controlla Inventari e Riordina</button>
+    </div>
+  
+    <!-- Monitoraggio delle Spedizioni -->
+    <div class="section">
+      <h3>Monitoraggio delle Spedizioni</h3>
+      <button (click)="trackShipment(1)">Traccia Spedizione 1</button>
+      <button (click)="trackShipment(2)">Traccia Spedizione 2</button>
+    </div>
+  
+    <!-- Ottimizzazione delle Rotte di Consegna -->
+    <div class="section">
+      <h3>Ottimizzazione delle Rotte di Consegna</h3>
+      <button (click)="optimizeDeliveryRoutes()">Ottimizza Rotte</button>
+    </div>
+  
+    <!-- Riconciliazione Automatica -->
+    <div class="section">
+      <h3>Riconciliazione Automatizzata</h3>
+      <button (click)="performReconciliation()">Esegui Riconciliazione</button>
+    </div>
+  
+    <!-- Magazzino con RFID e Barcode -->
+    <div class="section">
+      <h3>Gestione Magazzino</h3>
+      <button (click)="scanBarcode('123456')">Scansiona Barcode 123456</button>
+      <button (click)="scanBarcode('234567')">Scansiona Barcode 234567</button>
+    </div>
+  
+    <!-- Reportistica KPI Logistici -->
+    <div class="section">
+      <h3>Report KPI Logistici</h3>
+      <button (click)="generateKpiReport()">Genera Report KPI</button>
+    </div>
+  </div>
+  

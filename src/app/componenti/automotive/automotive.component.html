@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Gestione Automobili Aziendali</h1>
+  
+    <!-- Aggiungi un Nuovo Veicolo -->
+    <div class="form-container">
+      <h3>Aggiungi un Nuovo Veicolo</h3>
+      <form (ngSubmit)="addVehicle()">
+        <label for="model">Modello del Veicolo</label>
+        <input type="text" id="model" [(ngModel)]="newVehicle.model" name="model" required />
+  
+        <label for="mileage">Chilometraggio (km)</label>
+        <input type="number" id="mileage" [(ngModel)]="newVehicle.mileage" name="mileage" required />
+  
+        <label for="fuelConsumption">Consumo di Carburante (l/100km)</label>
+        <input type="number" id="fuelConsumption" [(ngModel)]="newVehicle.fuelConsumption" name="fuelConsumption" required />
+  
+        <button type="submit">Aggiungi Veicolo</button>
+      </form>
+    </div>
+  
+    <!-- Lista Veicoli -->
+    <h3>Veicoli Registrati</h3>
+    <ul>
+      <li *ngFor="let vehicle of vehicles">
+        <p><strong>Modello:</strong> {{ vehicle.model }}</p>
+        <p><strong>Chilometraggio:</strong> {{ vehicle.mileage }} km</p>
+        <p><strong>Prossima Manutenzione:</strong> {{ vehicle.nextMaintenanceDate | date }}</p>
+        <p><strong>Stato Diagnostico:</strong> {{ vehicle.diagnosticStatus }}</p>
+  
+        <button (click)="scheduleMaintenance(vehicle.id)">Pianifica Manutenzione</button>
+        <button (click)="diagnoseVehicle(vehicle.id)">Diagnostica Veicolo</button>
+        <button (click)="calculateOwnershipCosts(vehicle.id)">Calcola Costi Proprietà</button>
+        <button (click)="analyzeFuelSavings(vehicle.id)">Analizza Risparmio Carburante</button>
+      </li>
+    </ul>
+  
+    <!-- Prenotazione Test Drive -->
+   <!-- Prenotazione Test Drive -->
+    <div class="test-drive">
+        <h3>Prenota un Test Drive</h3>
+        <label for="testDriveModel">Modello del Veicolo</label>
+        <input type="text" id="testDriveModel" [(ngModel)]="newVehicle.model" name="testDriveModel" />
+    
+        <label for="testDriveDate">Data Test Drive</label>
+        <input type="date" id="testDriveDate" [(ngModel)]="newVehicle.nextMaintenanceDate" name="testDriveDate" />
+    
+        <button (click)="bookTestDrive(newVehicle.model, newVehicle.nextMaintenanceDate)">Prenota</button>
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>Gestione Polizze Assicurative</h1>
+  
+    <!-- Form per la creazione della polizza -->
+    <div class="form-container">
+      <h3>Crea una Nuova Polizza</h3>
+      <form (ngSubmit)="createPolicy()">
+        <label for="customerName">Nome Cliente</label>
+        <input type="text" id="customerName" [(ngModel)]="newPolicy.customerName" name="customerName" required />
+  
+        <label for="age">Età</label>
+        <input type="number" id="age" [(ngModel)]="newPolicy.age" name="age" required />
+  
+        <label for="coverageType">Tipo di Copertura</label>
+        <select id="coverageType" [(ngModel)]="newPolicy.coverageType" name="coverageType">
+          <option value="basic">Base</option>
+          <option value="full">Completa</option>
+        </select>
+  
+        <label for="medicalHistory">Storia Medica</label>
+        <select id="medicalHistory" [(ngModel)]="newPolicy.medicalHistory" name="medicalHistory">
+          <option value="low">Bassa</option>
+          <option value="high">Alta</option>
+        </select>
+  
+        <label for="previousClaims">Numero di Sinistri Precedenti</label>
+        <input type="number" id="previousClaims" [(ngModel)]="newPolicy.previousClaims" name="previousClaims" />
+  
+        <button type="button" (click)="newPolicy.premiumAmount = calculatePremium()">Calcola Premio</button>
+        <p><strong>Premio Calcolato: {{ newPolicy.premiumAmount | currency }}</strong></p>
+        <button type="submit">Crea Polizza</button>
+      </form>
+    </div>
+  
+    <hr />
+  
+    <!-- Lista delle Polizze -->
+    <h3>Polizze Esistenti</h3>
+    <ul>
+      <li *ngFor="let policy of policies">
+        <p><strong>Cliente:</strong> {{ policy.customerName }}</p>
+        <p><strong>Tipo Copertura:</strong> {{ policy.coverageType }}</p>
+        <p><strong>Premio:</strong> {{ policy.premiumAmount | currency }}</p>
+        <button (click)="renewPolicy(policy.id)">Rinnova Polizza</button>
+        <button (click)="alert('Dettagli polizza: ' + policy.id)">Visualizza Dettagli</button>
+      </li>
+    </ul>
+  </div>
+  

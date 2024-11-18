@@ -1,0 +1,59 @@
+<!-- registrazione.component.html -->
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="col-lg-4">
+        <h2 class="mb-4 text-center">Modulo di Registrazione</h2>
+        
+        <!-- Messaggio di successo -->
+        <div *ngIf="isSubmitted && registrazioneForm.valid" class="alert alert-success">
+            Registrazione completata con successo!
+        </div>
+      
+        <!-- Messaggio di errore generale -->
+        <div *ngIf="isSubmitted && registrazioneForm.invalid" class="alert alert-danger">
+            Si prega di correggere gli errori nel modulo.
+        </div>
+        
+        <form [formGroup]="registrazioneForm" (ngSubmit)="onSubmit()">
+            <!-- Campo Nome -->
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input id="nome" formControlName="nome" class="form-control" [ngClass]="{'is-invalid': isSubmitted && registrazioneForm.get('nome')?.invalid}">
+                <div *ngIf="isSubmitted && registrazioneForm.get('nome')?.invalid" class="invalid-feedback">
+                    Il nome è obbligatorio.
+                </div>
+            </div>
+        
+            <!-- Campo Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" formControlName="email" class="form-control" [ngClass]="{'is-invalid': isSubmitted && registrazioneForm.get('email')?.invalid}">
+                <div *ngIf="isSubmitted && registrazioneForm.get('email')?.invalid" class="invalid-feedback">
+                    <div *ngIf="registrazioneForm.get('email')?.errors?.['required']">
+                        L'email è obbligatoria.
+                    </div>
+                    <div *ngIf="registrazioneForm.get('email')?.errors?.['email']">
+                        Inserisci un'email valida.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Campo Password -->
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" formControlName="password" class="form-control" [ngClass]="{'is-invalid': isSubmitted && registrazioneForm.get('password')?.invalid}">
+                <div *ngIf="isSubmitted && registrazioneForm.get('password')?.invalid" class="invalid-feedback">
+                    <div *ngIf="registrazioneForm.get('password')?.errors?.['required']">
+                        La password è obbligatoria.
+                    </div>
+                    <div *ngIf="registrazioneForm.get('password')?.errors?.['minlength']">
+                        La password deve contenere almeno 6 caratteri.
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Bottone di Submit -->
+            <button type="submit" class="btn btn-primary w-100" [disabled]="registrazioneForm.invalid">Registrati</button>
+        </form>
+    </div>
+</div>
+<p>Si usa per form reattivi con logiche più avanzate con FormControl,FormGroup,FormBuilder, e validators nel ts</p>

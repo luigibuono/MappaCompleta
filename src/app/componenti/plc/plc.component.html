@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Sistema di Controllo di Processo Industriale</h1>
+  
+    <!-- Monitoraggio della Produzione in Tempo Reale -->
+    <div class="section">
+      <h3>Monitoraggio della Produzione</h3>
+      <button (click)="monitorProduction()">Monitora Produzione</button>
+      <p>Output: {{ productionMetrics.output }}</p>
+      <p>Qualità: {{ productionMetrics.quality }}%</p>
+      <p>Prestazioni: {{ productionMetrics.performance }}%</p>
+    </div>
+  
+    <!-- Controllo e Manutenzione Predittiva -->
+    <div class="section">
+      <h3>Controllo e Manutenzione Predittiva</h3>
+      <button (click)="performMaintenanceCheck()">Esegui Controllo Manutenzione</button>
+      <p>Manutenzione successiva: {{ predictiveMaintenance.nextMaintenance }}</p>
+      <p>Guasto Rilevato: {{ predictiveMaintenance.malfunctionDetected ? 'Sì' : 'No' }}</p>
+    </div>
+  
+    <!-- Gestione dei Lotti di Produzione -->
+    <div class="section">
+      <h3>Gestione dei Lotti di Produzione</h3>
+      <button (click)="manageBatch()">Gestisci Lotto</button>
+      <p>ID Lotto: {{ batchManagement.batchId }}</p>
+      <p>Controllo Qualità: {{ batchManagement.qualityControl }}</p>
+    </div>
+  
+    <!-- Ottimizzazione della Catena di Montaggio -->
+    <div class="section">
+      <h3>Ottimizzazione della Catena di Montaggio</h3>
+      <button (click)="optimizeAssemblyLine()">Ottimizza Catena di Montaggio</button>
+      <ul>
+        <li *ngFor="let suggestion of assemblyLineOptimization.optimizationSuggestions">
+          {{ suggestion }}
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Monitoraggio della Temperatura e Umidità -->
+    <div class="section">
+      <h3>Monitoraggio delle Condizioni Ambientali</h3>
+      <button (click)="monitorEnvironmentalConditions()">Monitora Condizioni Ambientali</button>
+      <p>Temperatura: {{ environmentalConditions.temperature }}°C</p>
+      <p>Umidità: {{ environmentalConditions.humidity }}%</p>
+    </div>
+  
+    <!-- Simulazione di Produzione Virtuale -->
+    <div class="section">
+      <h3>Simulazione di Produzione Virtuale</h3>
+      <button (click)="simulateDigitalTwin()">Simula Produzione Virtuale</button>
+      <p>Status: {{ digitalTwinSimulation.productionStatus }}</p>
+      <p>Risultato Simulazione: {{ digitalTwinSimulation.simulationOutcome }}</p>
+    </div>
+  </div>
+  

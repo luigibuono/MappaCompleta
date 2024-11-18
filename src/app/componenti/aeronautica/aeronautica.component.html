@@ -1,0 +1,50 @@
+<div class="container">
+    <h1>Sistema di Gestione Aeronautica</h1>
+  
+    <!-- Pianificazione del Volo -->
+    <div class="section">
+      <h3>Pianificazione del Volo</h3>
+      <input type="text" placeholder="Partenza" [(ngModel)]="flightPlan.departure">
+      <input type="text" placeholder="Arrivo" [(ngModel)]="flightPlan.arrival">
+      <button (click)="planFlight()">Pianifica Volo</button>
+    </div>
+  
+    <!-- Simulatore di Carico e Bilanciamento -->
+    <div class="section">
+      <h3>Simulatore di Carico e Bilanciamento</h3>
+      <input type="number" placeholder="Peso Totale (kg)" [(ngModel)]="aircraftLoad.totalWeight">
+      <button (click)="simulateLoad()">Simula Carico</button>
+    </div>
+  
+    <!-- Manutenzione dell'Aereo -->
+    <div class="section">
+      <h3>Manutenzione e Sicurezza</h3>
+      <input type="date" [(ngModel)]="maintenanceSchedule.date">
+      <input type="text" placeholder="Operazione di Manutenzione" [(ngModel)]="maintenanceSchedule.operation">
+      <button (click)="scheduleMaintenance()">Pianifica Manutenzione</button>
+    </div>
+  
+    <!-- Prenotazione dei Posti -->
+    <div class="section">
+      <h3>Prenotazione dei Posti</h3>
+      <input type="number" placeholder="Posti Preferenziali" [(ngModel)]="seatReservation.preferredSeats">
+      <input type="number" placeholder="Posti Premium" [(ngModel)]="seatReservation.premiumSeats">
+      <button (click)="bookSeats()">Prenota Posti</button>
+    </div>
+  
+    <!-- Monitoraggio Consumo Carburante -->
+    <div class="section">
+      <h3>Monitoraggio Consumo Carburante</h3>
+      <input type="number" placeholder="Distanza (km)" [(ngModel)]="fuelConsumption.distance">
+      <button (click)="optimizeFuelConsumption()">Ottimizza Consumo</button>
+    </div>
+  
+    <!-- Gestione Bagagli -->
+    <div class="section">
+      <h3>Gestione del Bagaglio</h3>
+      <input type="number" placeholder="Peso Bagaglio Totale (kg)" [(ngModel)]="baggageManagement.totalBaggage">
+      <input type="number" placeholder="Bagaglio Smarrito (kg)" [(ngModel)]="baggageManagement.lostBaggage">
+      <button (click)="manageBaggage()">Gestisci Bagagli</button>
+    </div>
+  </div>
+  
