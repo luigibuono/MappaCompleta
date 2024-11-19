@@ -1,1 +1,23 @@
-<p>sistemacommentielike works!</p>
+<div>
+    <h2>Sistema di Commenti e Like</h2>
+  
+    <!-- Aggiungi un nuovo commento -->
+    <div>
+      <textarea [(ngModel)]="newCommentText" placeholder="Scrivi un commento..."></textarea>
+      <button (click)="addComment()">Aggiungi Commento</button>
+    </div>
+  
+    <!-- Lista dei commenti -->
+    <ul>
+      <li *ngFor="let comment of comments">
+        <div>
+          <p>{{ comment.text }}</p>
+          <p><strong>Likes:</strong> {{ comment.likes }}</p>
+          <button (click)="addLike(comment.id)">Aggiungi Like</button>
+          <button (click)="deleteComment(comment.id)">Rimuovi Commento</button>
+        </div>
+        <hr>
+      </li>
+    </ul>
+  </div>
+  

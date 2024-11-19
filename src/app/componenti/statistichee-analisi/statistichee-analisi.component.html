@@ -1,1 +1,18 @@
-<p>statistichee-analisi works!</p>
+<div class="statistics-container">
+    <h2>Sales Statistics</h2>
+  
+    <!-- Visualizzazione delle statistiche -->
+    <p><strong>Total Sales:</strong> {{ totalSales }}</p>
+    <p><strong>Average Sales:</strong> {{ averageSales.toFixed(2) }}</p>
+    <p><strong>Max Sales in a Day:</strong> {{ maxSales }}</p>
+    <p><strong>Min Sales in a Day:</strong> {{ minSales }}</p>
+  
+    <!-- Grafico delle vendite (Bar Chart) -->
+    <div class="chart">
+      <h3>Sales Chart (Bar)</h3>
+      <div *ngFor="let sale of salesData" class="bar" [style.height.px]="sale" [style.width.px]="50" [style.margin-right.px]="10">
+        <span class="bar-label">{{ sale }}</span>
+      </div>
+    </div>
+  </div>
+  

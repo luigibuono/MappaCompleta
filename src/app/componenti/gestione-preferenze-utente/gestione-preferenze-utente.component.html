@@ -1,1 +1,30 @@
-<p>gestione-preferenze-utente works!</p>
+<body>
+    <div id="theme-container">
+      <h2>{{ 'TITLE' | translate }}</h2>
+  
+      <!-- Sezione per il Tema -->
+      <div>
+        <label for="theme">{{ 'THEME_LABEL' | translate }}:</label>
+        <select id="theme" [(ngModel)]="preferences.theme" (change)="updatePreferences()">
+          <option value="light">{{ 'LIGHT_THEME' | translate }}</option>
+          <option value="dark">{{ 'DARK_THEME' | translate }}</option>
+        </select>
+      </div>
+  
+      <!-- Sezione per la Lingua -->
+      <div>
+        <label for="language">{{ 'LANGUAGE_LABEL' | translate }}:</label>
+        <select id="language" [(ngModel)]="preferences.language" (change)="updatePreferences()">
+          <option value="en">{{ 'ENGLISH' | translate }}</option>
+          <option value="it">{{ 'ITALIAN' | translate }}</option>
+        </select>
+      </div>
+  
+      <!-- Sezione per Notifiche -->
+      <div>
+        <label for="notifications">{{ 'NOTIFICATIONS_LABEL' | translate }}:</label>
+        <input type="checkbox" id="notifications" [(ngModel)]="preferences.notifications" (change)="updatePreferences()" />
+      </div>
+    </div>
+  </body>
+  

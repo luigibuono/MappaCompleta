@@ -1,0 +1,11 @@
+/* Tema Chiaro */
+div {
+  background-color: white;  /* Colore di sfondo per tema chiaro */
+  color: black;  /* Colore del testo per tema chiaro */
+}
+
+/* Tema Scuro */
+div.dark {
+  background-color: black;  /* Colore di sfondo per tema scuro */
+  color: white;  /* Colore del testo per tema scuro */
+}

@@ -1,3 +1,19 @@
 li{
     border-right: 2px solid red;
 }
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap; /* Permette di andare su più righe */
+    justify-content: flex-start; /* Allinea gli elementi a sinistra */
+}
+
+.nav-item {
+    margin-right: 15px; /* Distanza tra gli item */
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        justify-content: center; /* Centra gli elementi su schermi piccoli */
+    }
+}

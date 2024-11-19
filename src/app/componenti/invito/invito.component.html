@@ -1,1 +1,25 @@
-<p>invito works!</p>
+<div class="referral-container">
+    <h2>Referral Program</h2>
+    
+    <!-- Sezione per il codice di invito -->
+    <div class="referral-code-section">
+      <p><strong>Your Referral Code:</strong> {{ referralCode }}</p>
+      <button (click)="copyReferralCode()">Copy Referral Code</button>
+    </div>
+    
+    <!-- Sezione per invitare amici -->
+    <div class="invite-section">
+      <h3>Invite a Friend</h3>
+      <input [(ngModel)]="friendName" type="text" placeholder="Friend's Name" />
+      <button (click)="addReferral()">Send Invitation</button>
+    </div>
+    
+    <!-- Lista dei referral -->
+    <div class="referral-list-section">
+      <h3>Your Invited Friends</h3>
+      <ul>
+        <li *ngFor="let friend of referralList">{{ friend }}</li>
+      </ul>
+    </div>
+  </div>
+  

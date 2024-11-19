@@ -1,1 +1,20 @@
-<p>backup works!</p>
+<div class="backup-container">
+    <h2>Backup e Ripristino</h2>
+  
+    <div class="backup-section">
+      <button (click)="backupData()">Esegui Backup</button>
+      <p *ngIf="backupStatus">Backup effettuato con successo!</p>
+    </div>
+  
+    <div class="restore-section">
+      <button (click)="restoreData()">Ripristina Dati</button>
+      <p *ngIf="restoreStatus">Dati ripristinati con successo!</p>
+    </div>
+  
+    <div class="user-data">
+      <h3>Dati Utente</h3>
+      <p><strong>Nome:</strong> {{ userData.name }}</p>
+      <p><strong>Email:</strong> {{ userData.email }}</p>
+    </div>
+  </div>
+  

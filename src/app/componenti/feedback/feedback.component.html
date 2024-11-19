@@ -1,1 +1,24 @@
-<p>feedback works!</p>
+<div class="feedback-container">
+    <h2>Lascia una Recensione</h2>
+    
+    <!-- Form per lasciare una recensione -->
+    <form (submit)="submitReview()">
+      <div>
+        <label for="rating">Valutazione (1-5 stelle):</label>
+        <input type="number" id="rating" name="rating" [(ngModel)]="rating" min="1" max="5" required />
+      </div>
+      <div>
+        <label for="comment">Commento:</label>
+        <textarea id="comment" name="comment" [(ngModel)]="comment" required></textarea>
+      </div>
+      <button type="submit">Invia</button>
+    </form>
+  
+    <!-- Mostra le recensioni -->
+    <h3>Recensioni:</h3>
+    <div *ngFor="let review of reviews">
+      <p><strong>Valutazione:</strong> {{ review.rating }} stelle</p>
+      <p><strong>Commento:</strong> {{ review.comment }}</p>
+    </div>
+  </div>
+  

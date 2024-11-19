@@ -1,1 +1,40 @@
-<p>gestione-ordini works!</p>
+<div>
+    <h2>Gestione Ordini</h2>
+  
+    <!-- Filtraggio ordini -->
+    <div>
+      <label for="statusFilter">Filtra per Stato:</label>
+      <select id="statusFilter" [(ngModel)]="statusFilter">
+        <option value="">Tutti</option>
+        <option value="in-progress">In Progress</option>
+        <option value="completed">Completato</option>
+        <option value="canceled">Annullato</option>
+      </select>
+    </div>
+  
+    <!-- Lista degli ordini -->
+    <ul>
+      <li *ngFor="let order of filteredOrders(); let i = index">
+        <div>
+          <h3>Ordine #{{ order.id }}</h3>
+          <p>Prodotto: {{ order.product }}</p>
+          <p>Quantità: {{ order.quantity }}</p>
+          <p>Stato: <strong>{{ order.status }}</strong></p>
+          <button (click)="updateOrderStatus(order.id)">Cambia Stato</button>
+          <button (click)="deleteOrder(order.id)">Rimuovi Ordine</button>
+        </div>
+        <hr>
+      </li>
+    </ul>
+  
+    <!-- Aggiungi nuovo ordine -->
+    <button (click)="addOrder()">Aggiungi Nuovo Ordine</button>
+  
+    <!-- Paginazione -->
+    <div *ngIf="orders.length > 0">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">Precedente</button>
+      <span>Pagina {{ currentPage }} di {{ totalPages() }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages()">Successivo</button>
+    </div>
+  </div>
+  

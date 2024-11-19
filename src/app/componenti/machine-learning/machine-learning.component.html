@@ -1,1 +1,111 @@
-<p>machine-learning works!</p>
+<div class="ml-container">
+  <h2>Regressione Lineare in Angular</h2>
+  <p>Slope: {{ slope.toFixed(2) }}</p>
+  <p>Intercept: {{ intercept.toFixed(2) }}</p>
+
+  <!-- Input per la previsione -->
+  <input 
+    type="number" 
+    [(ngModel)]="inputValue" 
+    placeholder="Inserisci un numero" 
+  />
+  <button (click)="predict()">Predict</button>
+
+  <!-- Risultato della previsione -->
+  <div *ngIf="prediction !== null">
+    <p>Prediction: {{ prediction.toFixed(2) }}</p>
+  </div>
+</div>
+
+<!-- Concetti di Machine Learning -->
+<div class="ml-info">
+  <h3>1. Concetti Fondamentali di Machine Learning</h3>
+  <ul>
+    <li>
+      <strong>Definizione:</strong> Il Machine Learning (ML) è una branca 
+      dell'intelligenza artificiale che permette ai computer di apprendere dai dati 
+      senza essere esplicitamente programmati.
+    </li>
+    <li>
+      <strong>Tipi di ML:</strong>
+      <ul>
+        <li><em>Supervised Learning:</em> Modelli addestrati con dati etichettati (es. classificazione, regressione).</li>
+        <li><em>Unsupervised Learning:</em> Modelli che trovano pattern nei dati non etichettati (es. clustering).</li>
+        <li><em>Reinforcement Learning:</em> Apprendimento basato su premi e penalità attraverso l'interazione con un ambiente.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>2. Algoritmi e Modelli di Base</h3>
+  <ul>
+    <li>Regressione Lineare e Logistica: Predizione di variabili continue (regressione) o categoriali (logistica).</li>
+    <li>Alberi Decisionali e Random Forest: Algoritmi basati su alberi per classificazione e regressione.</li>
+    <li>Support Vector Machines (SVM): Classificatori lineari e non lineari.</li>
+    <li>K-Nearest Neighbors (KNN): Algoritmo di classificazione basato sulla vicinanza dei dati.</li>
+    <li>K-Means: Clustering per raggruppare dati non etichettati.</li>
+    <li>Reti Neurali: Modelli ispirati al cervello umano, utilizzati per problemi complessi (es. riconoscimento di immagini).</li>
+  </ul>
+
+  <h3>3. Pipeline di Machine Learning</h3>
+  <ul>
+    <li>Data Preprocessing: Pulizia e preparazione dei dati (normalizzazione, gestione dei dati mancanti, ecc.).</li>
+    <li>Feature Engineering: Creazione di nuove caratteristiche dai dati esistenti.</li>
+    <li>Training: Addestramento del modello con dati di esempio.</li>
+    <li>Validation: Valutazione delle prestazioni del modello su un set di dati separato.</li>
+    <li>Testing: Verifica finale del modello su dati mai visti prima.</li>
+    <li>Deployment: Messa in produzione del modello per l'uso reale.</li>
+  </ul>
+
+  <h3>4. Metriche di Valutazione</h3>
+  <ul>
+    <li>Accuratezza: Percentuale di previsioni corrette.</li>
+    <li>Precision e Recall: Metriche per valutare le performance nei problemi di classificazione.</li>
+    <li>Confusion Matrix: Tabella per valutare le performance di classificazione.</li>
+    <li>Mean Squared Error (MSE) e Root Mean Squared Error (RMSE): Metriche di errore per la regressione.</li>
+    <li>F1-Score: Media armonica di Precision e Recall.</li>
+  </ul>
+
+  <h3>5. Librerie e Strumenti</h3>
+  <ul>
+    <li>Python è il linguaggio principale per il ML grazie alla sua vasta gamma di librerie:</li>
+    <ul>
+      <li>NumPy e Pandas per la manipolazione dei dati.</li>
+      <li>Scikit-learn per algoritmi ML di base.</li>
+      <li>TensorFlow e PyTorch per reti neurali e deep learning.</li>
+      <li>Matplotlib e Seaborn per la visualizzazione dei dati.</li>
+      <li>Jupyter Notebook: Ambiente interattivo per il testing e lo sviluppo.</li>
+    </ul>
+  </ul>
+
+  <h3>6. Overfitting e Underfitting</h3>
+  <ul>
+    <li>Overfitting: Quando un modello è troppo complesso e si adatta troppo ai dati di training, perdendo capacità di generalizzazione.</li>
+    <li>Underfitting: Quando un modello è troppo semplice e non cattura la complessità dei dati.</li>
+  </ul>
+
+  <h3>7. Ottimizzazione dei Modelli</h3>
+  <ul>
+    <li>Hyperparameter Tuning: Scelta dei parametri ottimali per il modello (es. con la ricerca a griglia).</li>
+    <li>Cross-Validation: Tecnica per testare la performance del modello con suddivisioni multiple del dataset.</li>
+    <li>Regularizzazione: Tecniche per evitare l'overfitting (es. Lasso, Ridge).</li>
+  </ul>
+
+  <h3>8. Gestione dei Dati</h3>
+  <ul>
+    <li>Set di Dati: Comprendere l'importanza di avere dati di qualità e sufficientemente bilanciati.</li>
+    <li>Dati di Training, Validation, e Test: Separazione dei dati in set per l'addestramento, la validazione e il test.</li>
+    <li>Data Augmentation: Tecniche per aumentare la quantità di dati per il training, soprattutto nelle immagini.</li>
+  </ul>
+
+  <h3>9. Etica e Bias nei Dati</h3>
+  <ul>
+    <li>Bias nei Dati: Riconoscere e ridurre pregiudizi nei dati che possono influenzare il modello.</li>
+    <li>Privacy e Sicurezza: Rispetto della privacy e gestione sicura dei dati sensibili.</li>
+  </ul>
+
+  <h3>10. Processo di Sperimentazione</h3>
+  <ul>
+    <li>Iterazione: Il processo di Machine Learning è iterativo: prova, analizza i risultati, migliora.</li>
+    <li>Documentazione: Registrare esperimenti, configurazioni e risultati per futura referenza.</li>
+  </ul>
+</div>

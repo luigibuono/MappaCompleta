@@ -3,3 +3,16 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Specifica che questi stili si applicano solo quando il body ha la classe `dark-theme` */
+body.dark-theme {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+  }
+  
+  /* Specifica che questi stili si applicano solo quando il body ha la classe `light-theme` */
+  body.light-theme {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
