@@ -1,1 +1,46 @@
-<p>metodi-crud works!</p>
+<div>
+    <h1>{{ title }}</h1>
+  
+    <!-- Form per aggiungere un nuovo utente -->
+    <div>
+      <h2>Aggiungi Nuovo Utente</h2>
+      <label for="name">Nome:</label>
+      <input type="text" id="name" [(ngModel)]="newUser.name" placeholder="Nome">
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="newUser.email" placeholder="Email">
+  
+      <button (click)="addUser()">Aggiungi Utente</button>
+    </div>
+  
+    <hr />
+  
+    <!-- Lista degli utenti -->
+    <h2>Lista Utenti</h2>
+    <ul>
+      <li *ngFor="let user of users">
+        <span>{{ user.name }} ({{ user.email }})</span>
+  
+        <!-- Pulsante di modifica -->
+        <button (click)="editUser(user)">Modifica</button>
+  
+        <!-- Pulsante di eliminazione -->
+        <button (click)="deleteUser(user)">Elimina</button>
+      </li>
+    </ul>
+  
+    <!-- Form per modificare un utente -->
+    <div *ngIf="selectedUser">
+      <h2>Modifica Utente</h2>
+      <label for="edit-name">Nome:</label>
+      <input type="text" id="edit-name" [(ngModel)]="selectedUser.name" placeholder="Nome">
+  
+      <label for="edit-email">Email:</label>
+      <input type="email" id="edit-email" [(ngModel)]="selectedUser.email" placeholder="Email">
+  
+      <button (click)="updateUser()">Salva Modifiche</button>
+      <button (click)="selectedUser = null">Annulla</button>
+    </div>
+  
+  </div>
+  

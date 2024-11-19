@@ -1,1 +1,15 @@
-<p>notifiche-real-life works!</p>
+<div>
+    <h2>Notifiche in Tempo Reale</h2>
+  
+    <!-- Elenco delle notifiche -->
+    <div *ngFor="let notification of notifications; let i = index">
+      <div class="notification">
+        <span>{{ notification.message }}</span>
+        <span class="timestamp">{{ notification.timestamp | date: 'short' }}</span>
+      </div>
+    </div>
+  
+    <!-- Bottone per simulare l'arrivo di una nuova notifica -->
+    <button (click)="simulateNotification()">Simula Notifica</button>
+  </div>
+  

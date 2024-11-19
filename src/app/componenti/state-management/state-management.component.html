@@ -1,1 +1,24 @@
-<p>state-management works!</p>
+<div>
+    <h1>Gestione dello Stato con NgRx</h1>
+  
+    <!-- Form per aggiungere un nuovo elemento -->
+    <div>
+      <input [(ngModel)]="newItemName" placeholder="Nome nuovo elemento" />
+      <button (click)="addItem()">Aggiungi</button>
+    </div>
+  
+    <!-- Elenco degli elementi -->
+    <ul>
+      <li *ngFor="let item of items$ | async">
+        <span *ngIf="item !== itemToEdit">{{ item.name }}</span>
+        <input *ngIf="item === itemToEdit" [(ngModel)]="editedItemName" />
+        
+        <button *ngIf="item !== itemToEdit" (click)="startEditing(item)">Modifica</button>
+        <button *ngIf="item === itemToEdit" (click)="saveEditedItem()">Salva</button>
+        <button *ngIf="item === itemToEdit" (click)="cancelEditing()">Annulla</button>
+        
+        <button (click)="deleteItem(item)">Elimina</button>
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,10 @@
+<div *ngIf="hasAdminPermission()">
+    <h2>Benvenuto nella Dashboard Protetta</h2>
+    <button (click)="logout()">Logout</button>
+  </div>
+  
+  <div *ngIf="!hasAdminPermission()">
+    <h2>Accesso Negato</h2>
+    <p>Solo gli amministratori possono accedere a questa sezione.</p>
+  </div>
+  

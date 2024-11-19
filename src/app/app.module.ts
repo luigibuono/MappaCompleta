@@ -34,6 +34,31 @@ import { AutomotiveComponent } from './componenti/automotive/automotive.componen
 import { AeronauticaComponent } from './componenti/aeronautica/aeronautica.component';
 import { PlcComponent } from './componenti/plc/plc.component';
 import { LogisticaComponent } from './componenti/logistica/logistica.component';
+import { StoreModule } from '@ngrx/store';
+import { itemsReducer } from './componenti/reducer';
+import { DashboardComponent } from './componenti/dashboard/dashboard.component';
+import { SistemacommentielikeComponent } from './componenti/sistemacommentielike/sistemacommentielike.component';
+import { GestionePreferenzeUtenteComponent } from './componenti/gestione-preferenze-utente/gestione-preferenze-utente.component';
+import { StatisticheeAnalisiComponent } from './componenti/statistichee-analisi/statistichee-analisi.component';
+import { InternalizzazioneElocalizzazioneComponent } from './componenti/internalizzazione-elocalizzazione/internalizzazione-elocalizzazione.component';
+import { SessioniERuoliComponent } from './componenti/sessioni-eruoli/sessioni-eruoli.component';
+import { LogMonitoraggioComponent } from './componenti/log-monitoraggio/log-monitoraggio.component';
+import { BackupComponent } from './componenti/backup/backup.component';
+import { AnalyticsComponent } from './componenti/analytics/analytics.component';
+import { AsyncComponent } from './componenti/async/async.component';
+import { FeedbackComponent } from './componenti/feedback/feedback.component';
+import { ChatComponent } from './componenti/chat/chat.component';
+import { AbbonamentiEPagamentiComponent } from './componenti/abbonamenti-epagamenti/abbonamenti-epagamenti.component';
+import { SistemiTerzePartiComponent } from './componenti/sistemi-terze-parti/sistemi-terze-parti.component';
+import { MappeComponent } from './componenti/mappe/mappe.component';
+import { PushComponent } from './componenti/push/push.component';
+import { LinguaeTraduzioneComponent } from './componenti/linguae-traduzione/linguae-traduzione.component';
+import { FaqComponent } from './componenti/faq/faq.component';
+import { GdprComponent } from './componenti/gdpr/gdpr.component';
+import { InvitoComponent } from './componenti/invito/invito.component';
+import { SondaggiComponent } from './componenti/sondaggi/sondaggi.component';
+import { PromozioniComponent } from './componenti/promozioni/promozioni.component';
+import { MachineLearningComponent } from './componenti/machine-learning/machine-learning.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +90,30 @@ import { LogisticaComponent } from './componenti/logistica/logistica.component';
     AutomotiveComponent,
     AeronauticaComponent,
     PlcComponent,
-    LogisticaComponent
+    LogisticaComponent,
+    DashboardComponent,
+    SistemacommentielikeComponent,
+    GestionePreferenzeUtenteComponent,
+    StatisticheeAnalisiComponent,
+    InternalizzazioneElocalizzazioneComponent,
+    SessioniERuoliComponent,
+    LogMonitoraggioComponent,
+    BackupComponent,
+    AnalyticsComponent,
+    AsyncComponent,
+    FeedbackComponent,
+    ChatComponent,
+    AbbonamentiEPagamentiComponent,
+    SistemiTerzePartiComponent,
+    MappeComponent,
+    PushComponent,
+    LinguaeTraduzioneComponent,
+    FaqComponent,
+    GdprComponent,
+    InvitoComponent,
+    SondaggiComponent,
+    PromozioniComponent,
+    MachineLearningComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +121,8 @@ import { LogisticaComponent } from './componenti/logistica/logistica.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({appState: itemsReducer}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]

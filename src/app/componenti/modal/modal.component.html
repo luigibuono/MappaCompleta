@@ -1,1 +1,14 @@
-<p>modal works!</p>
+<div>
+    <button (click)="openModal('Eliminazione elemento')">Elimina elemento</button>
+    <button (click)="openModal('Aggiornamento dati')">Aggiorna dati</button>
+  
+    <!-- Modal di conferma -->
+    <div *ngIf="showModal" class="modal">
+      <div class="modal-content">
+        <h2>Sei sicuro di voler eseguire l'azione?</h2>
+        <p>Operazione: {{ actionToConfirm }}</p>
+        <button (click)="confirmAction()">Conferma</button>
+        <button (click)="closeModal()">Annulla</button>
+      </div>
+    </div>
+  </div>

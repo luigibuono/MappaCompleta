@@ -1,1 +1,32 @@
-<p>paginazione-efiltri works!</p>
+<div>
+    <!-- Filtro per cercare per nome -->
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Cerca per nome..." (input)="filterData()"/>
+  
+    <!-- Tabella con i dati filtrati e paginati -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of currentPageData">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Paginazione -->
+    <div>
+      <button (click)="goToPage(1)" [disabled]="currentPage === 1">Prima</button>
+      <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Precedente</button>
+      <span>Pagina {{ currentPage }} di {{ totalPages }}</span>
+      <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">Successiva</button>
+      <button (click)="goToPage(totalPages)" [disabled]="currentPage === totalPages">Ultima</button>
+    </div>
+  </div>
+  

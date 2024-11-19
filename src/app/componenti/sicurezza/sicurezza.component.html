@@ -1,1 +1,26 @@
-<p>sicurezza works!</p>
+<div>
+    <h1>{{ title }}</h1>
+  
+    <!-- Simulazione CORS -->
+    <div *ngIf="corsError">
+      <p style="color: red;">Errore CORS: Impossibile fare la richiesta a un dominio esterno.</p>
+    </div>
+    <button (click)="simulateCORSRequest()">Simula richiesta CORS</button>
+  
+    <hr />
+  
+    <!-- Simulazione XSS -->
+    <h2>Simulazione XSS</h2>
+    <label for="xss-input">Inserisci un testo (potenzialmente dannoso):</label>
+    <input type="text" id="xss-input" [(ngModel)]="xssInput">
+    <button (click)="simulateXSS()">Visualizza output</button>
+    <p>Output: <span [innerHTML]="xssOutput"></span></p> <!-- Potenziale vulnerabilità XSS -->
+  
+    <hr />
+  
+    <!-- Simulazione CSRF -->
+    <h2>Simulazione CSRF</h2>
+    <button (click)="simulateCSRF()">Simula richiesta CSRF</button>
+    <div *ngIf="csrfMessage" style="color: red;">{{ csrfMessage }}</div>
+  </div>
+  

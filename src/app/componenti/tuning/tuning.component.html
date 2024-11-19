@@ -1,1 +1,15 @@
-<p>tuning works!</p>
+<!-- Aggiungi un controllo di sicurezza per evitare errori -->
+<div>{{ calculatedValue }}</div>
+
+<!-- Usa un controllo per data e data.items -->
+<ul *ngIf="data && data.items">
+  <li *ngFor="let item of data.items; trackBy: trackByFn">{{ item.name }}</li>
+</ul>
+
+<!-- Usa async pipe per Observable -->
+<div *ngIf="observableData$ | async as data">
+  <p>{{ data.title }}</p>
+</div>
+
+<!-- Button per eseguire operazione pesante -->
+<button (click)="performHeavyOperation()">Perform Heavy Operation</button>
