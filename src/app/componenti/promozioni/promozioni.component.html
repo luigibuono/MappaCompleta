@@ -1,1 +1,26 @@
-<p>promozioni works!</p>
+<div class="promo-code-container">
+    <h2>Gestione Codici Promozionali</h2>
+  
+    <!-- Input per il codice promozionale -->
+    <div class="promo-input">
+      <input
+        [(ngModel)]="promoCode"
+        type="text"
+        placeholder="Inserisci il codice promozionale"
+      />
+      <button (click)="validatePromoCode()">Applica Codice</button>
+    </div>
+  
+    <!-- Messaggi di stato -->
+    <div *ngIf="message" class="message" [ngClass]="{'success': isSuccess, 'error': !isSuccess}">
+      {{ message }}
+    </div>
+  
+    <!-- Dettagli dello sconto -->
+    <div *ngIf="discountApplied" class="discount-details">
+      <h3>Sconto Applicato!</h3>
+      <p>Hai ricevuto uno sconto del {{ discountPercentage }}%.</p>
+      <p>Totale scontato: {{ discountedPrice.toFixed(2) }}€</p>
+    </div>
+  </div>
+  

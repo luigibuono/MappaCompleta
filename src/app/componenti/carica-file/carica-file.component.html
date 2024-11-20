@@ -1,1 +1,26 @@
-<p>carica-file works!</p>
+<div class="file-upload-container">
+    <h2>Caricamento File e Gestione Media</h2>
+  
+    <!-- Area di caricamento -->
+    <div class="upload-section">
+      <input type="file" (change)="onFileSelected($event)" multiple />
+      <button [disabled]="!selectedFiles" (click)="uploadFiles()">Carica File</button>
+    </div>
+  
+    <!-- Lista dei file caricati -->
+    <div *ngIf="uploadedFiles.length > 0" class="uploaded-files">
+      <h3>File Caricati</h3>
+      <ul>
+        <li *ngFor="let file of uploadedFiles">
+          <div class="file-details">
+            <span>{{ file.name }}</span>
+            <button (click)="removeFile(file)">Rimuovi</button>
+            <button (click)="openFile(file)">Apri</button>
+          </div>
+          <!-- Mostra l'anteprima solo per le immagini -->
+          <img *ngIf="isImage(file)" [src]="file.previewUrl" alt="Anteprima" />
+        </li>
+      </ul>
+    </div>
+  </div>
+  

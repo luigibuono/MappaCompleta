@@ -1,1 +1,45 @@
-<p>faq works!</p>
+<div class="faq-support-container">
+    <h2>FAQ e Supporto</h2>
+  
+    <!-- Sezione FAQ -->
+    <div class="faq-section">
+      <h3>Domande Frequenti</h3>
+      <div *ngFor="let faq of faqs" class="faq-item">
+        <button class="faq-question" (click)="toggleFaq(faq)">
+          {{ faq.question }}
+        </button>
+        <div *ngIf="faq.open" class="faq-answer">
+          {{ faq.answer }}
+        </div>
+      </div>
+    </div>
+  
+    <!-- Sezione Supporto -->
+    <div class="support-section">
+      <h3>Richiedi Supporto</h3>
+      <form (ngSubmit)="submitSupportRequest()">
+        <label for="name">Nome</label>
+        <input id="name" [(ngModel)]="supportForm.name" name="name" required />
+  
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          [(ngModel)]="supportForm.email"
+          name="email"
+          required
+        />
+  
+        <label for="message">Messaggio</label>
+        <textarea
+          id="message"
+          [(ngModel)]="supportForm.message"
+          name="message"
+          required
+        ></textarea>
+  
+        <button type="submit">Invia Richiesta</button>
+      </form>
+    </div>
+  </div>
+  
